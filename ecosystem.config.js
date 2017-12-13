@@ -25,7 +25,7 @@ module.exports = {
       "repo" : "https://github.com/OriginProtocol/demo-dapp.git",
       "ref"  : "origin/master",
       "path" : "/home/ubuntu/apps/demo-dapp",
-      "post-deploy" : "pm2 startOrRestart /home/ubuntu/apps/demo-dapp/current/ecosystem.config.json --env production"
+      "post-deploy" : "pm2 startOrRestart ecosystem.config.js --env production"
     }
   }
 };
