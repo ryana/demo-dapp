@@ -25,7 +25,7 @@ module.exports = {
       "repo" : "https://github.com/OriginProtocol/demo-dapp.git",
       "ref"  : "origin/master",
       "path" : "/home/ubuntu/apps/demo-dapp",
-      "post-deploy" : "if [ ! -e ./node_modules ]; then ln -sf /home/ubuntu/apps/demo-dapp/shared/node_modules ./node_modules; fi && npm install && truffle compile && pm2 startOrRestart ecosystem.config.js --env production"
+      "post-deploy" : "ln -nfs /home/ubuntu/apps/demo-dapp/shared/node_modules node_modules && npm install && truffle compile && pm2 startOrRestart ecosystem.config.js --env production"
     }
   }
 };
