@@ -18,9 +18,6 @@ module.exports = {
     }
   ],
 
-  // I'm not a huge fan of how long these deploys
-  // will take down the application, but it's
-  // acceptable for now.
   "deploy" : {
     "production" : {
       "user" : "ubuntu",
@@ -28,7 +25,7 @@ module.exports = {
       "repo" : "https://github.com/OriginProtocol/demo-dapp.git",
       "ref"  : "origin/master",
       "path" : "/home/ubuntu/apps/demo-dapp",
-      "post-deploy" : "npm install && pm2 startOrRestart ecosystem.config.js --env production"
+      "post-deploy" : "ln -s /home/ubuntu/apps/demo-dapp/shared/node_modules node_modules && npm install && pm2 startOrRestart ecosystem.config.js --env production"
     }
   }
 };
