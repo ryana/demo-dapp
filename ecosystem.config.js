@@ -24,7 +24,7 @@ module.exports = {
       "host" : "op-demo",
       "repo" : "https://github.com/OriginProtocol/demo-dapp.git",
       "ref"  : "origin/master",
-      "path" : "/home/ubuntu/apps/origin-demo-dapp",
+      "path" : "/home/ubuntu/apps/demo-dapp",
       "post-deploy" : "pm2 startOrRestart ecosystem.config.json --env production"
     }
   }
