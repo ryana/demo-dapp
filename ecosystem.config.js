@@ -11,7 +11,7 @@ module.exports = {
       // In production we're proxying IPFS through nginx
       // for SSL.
       env_production : {
-        IPFS_API_PORT: "443",
+        IPFS_API_PORT: "5002",
         IPFS_DOMAIN: "gateway.originprotocol.com",      
         NODE_ENV: 'production'
       }
