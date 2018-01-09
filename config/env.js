@@ -22,6 +22,8 @@ function getClientEnvironment(publicUrl) {
       // This should only be used as an escape hatch. Normally you would put
       // images into the `src` and `import` them in code to get their paths.
       'PUBLIC_URL': JSON.stringify(publicUrl),
+      'HIDE_LIST_URL': process.env.HIDE_LIST_URL,
+      'MAX_UPLOAD_BYTES': process.env.MAX_UPLOAD_BYTES || 1900000,
       // To use a local IPFS daemon, set IPFS_DOMAIN env var to 127.0.01
       // and IPFS_API_PORT env var to 5001
       'IPFS_API_PORT': JSON.stringify(process.env.IPFS_API_PORT || "5002"),

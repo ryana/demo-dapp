@@ -20,13 +20,13 @@ class ListingsGrid extends Component {
   componentWillMount() {
     // Get listings to hide if on demo
     const hideListPromise = new Promise((resolve, reject) => {
-      if (window.location.hostname !== "demo.originprotocol.com") {
-        resolve([])
-      } else {
+      if (process.env.HIDE_LIST_URL) {
         resolve (
-          fetch('https://raw.githubusercontent.com/OriginProtocol/demo-dapp/hide_list/hidelist.json')
+          fetch(process.env.HIDE_LIST_URL).
           .then((response) => response.json())
         )
+      } else {
+        resolve([])
       }
     })
     // Get all listings from contract
